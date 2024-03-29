@@ -1,8 +1,0 @@
-[
-  { "test": "test #1", "status": "passed", "lines": [2, 3, 4, 6, 7, 16, 19] },
-  { "test": "test #2", "status": "passed", "lines": [2, 3, 4, 5, 16, 19] },
-  { "test": "test #3", "status": "passed", "lines": [2, 3, 10, 11, 16, 19] },
-  { "test": "test #4", "status": "passed", "lines": [2, 3, 10, 12, 16, 19] },
-  { "test": "test #5", "status": "passed", "lines": [2, 3, 4, 6, 16, 19] },
-  { "test": "test #6", "status": "failed", "lines": [2, 3, 4, 6, 7, 16, 19] }
-]
