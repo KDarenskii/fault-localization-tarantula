@@ -1,23 +1,14 @@
 const jest = require("jest");
 const fs = require("fs");
 
-const { parseLcov } = require("../helpers/parse-lcov");
-const { parseTestResults } = require("../helpers/parse-test-results");
+const { parseLcov } = require("./parse-lcov");
+const { parseTestResults } = require("./parse-test-results");
 const { saveJSON } = require("./save-json");
 
 const { RESULT_OUTPUT_PATH } = require("../constants/results-path");
 const { TEST_DATA_PATH } = require("../constants/test-data");
 
-const testFiles = [
-  "src/mid/tests/mid1.test.js",
-  "src/mid/tests/mid2.test.js",
-  "src/mid/tests/mid3.test.js",
-  "src/mid/tests/mid4.test.js",
-  "src/mid/tests/mid5.test.js",
-  "src/mid/tests/mid6.test.js",
-];
-
-async function startTests() {
+async function runTests(testFiles) {
   const testPromises = [];
 
   testFiles.forEach((file) => {
@@ -54,4 +45,4 @@ async function startTests() {
   fs.writeFileSync(TEST_DATA_PATH, jsonResult, "utf-8");
 }
 
-startTests();
+module.exports = { runTests };

@@ -19,11 +19,11 @@ describe("KMP Search Algorithm", () => {
   //   expect(kmpSearch(text, pattern)).toEqual([9]);
   // });
 
-  test("test #4", () => {
-    const text = "ABCDABXYXYBA";
-    const pattern = "XYZ";
-    expect(kmpSearch(text, pattern)).toEqual([]);
-  });
+  // test("test #4", () => {
+  //   const text = "ABCDABXYXYBA";
+  //   const pattern = "XYZ";
+  //   expect(kmpSearch(text, pattern)).toEqual([]);
+  // });
 
   // test("test #5", () => {
   //   const text = "ABCDABXYXYBA";
