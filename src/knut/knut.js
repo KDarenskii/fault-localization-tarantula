@@ -1,11 +1,4 @@
-function kmpSearch(text, pattern) {
-  const n = text.length;
-  const m = pattern.length;
-
-  if (n === 0) return [];
-
-  if (m === 0) return [];
-
+function prefixTable(pattern) {
   let prefix = new Array(pattern.length);
   prefix[0] = 0;
   let len = 0;
@@ -24,11 +17,24 @@ function kmpSearch(text, pattern) {
       }
     }
   }
+  return prefix;
+}
+
+function kmpSearch(text, pattern) {
+  const n = text.length;
+  const m = pattern.length;
+
+  if (n === 0) return [];
+
+  if (m === 0) return [];
+
+  const prefix = prefixTable(pattern);
 
   let i = 0;
   let j = 0;
 
   const matches = [];
+  
   while (i < n) {
     if (pattern[j] === text[i]) {
       i++;
