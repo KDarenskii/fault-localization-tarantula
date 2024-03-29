@@ -139,11 +139,6 @@ function tarantula() {
 
   const rankedSuspiciousness = makeRanking(suspiciousnessArray);
 
-  console.log("");
-  console.log("Total Passed = " + totalPassed(testResults));
-  console.log("Total Failed = " + totalFailed(testResults));
-  console.log("");
-
   saveReport(rankedSuspiciousness);
 }
 

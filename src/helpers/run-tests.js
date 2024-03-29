@@ -12,19 +12,10 @@ async function runTests(testFiles) {
 
   testFiles.forEach((file) => {
     const testPromise = jest
-      .run([
-        file,
-        "--coverage",
-        "--json",
-        `--outputFile=${RESULT_OUTPUT_PATH}`,
-        // "--runInBand",
-      ])
+      .run([file, "--coverage", "--json", `--outputFile=${RESULT_OUTPUT_PATH}`])
       .then(() => {
-        console.log(`====== FILE: ${file} ==========`);
         const coveredLines = parseLcov();
-        console.log("COVERED LINES", coveredLines);
         const testResult = parseTestResults();
-        console.log("RESULT", testResult);
         return {
           test: testResult.title,
           status: testResult.status,
