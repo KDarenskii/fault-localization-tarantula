@@ -1,6 +1,11 @@
 function kmpSearch(text, pattern) {
   const n = text.length;
   const m = pattern.length;
+
+  if (n === 0) return [];
+
+  if (m === 0) return [];
+
   let prefix = new Array(pattern.length);
   prefix[0] = 0;
   let len = 0;
@@ -19,8 +24,10 @@ function kmpSearch(text, pattern) {
       }
     }
   }
+
   let i = 0;
   let j = 0;
+
   const matches = [];
   while (i < n) {
     if (pattern[j] === text[i]) {

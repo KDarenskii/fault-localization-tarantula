@@ -17,7 +17,7 @@ async function runTests(testFiles) {
         "--coverage",
         "--json",
         `--outputFile=${RESULT_OUTPUT_PATH}`,
-        "--runInBand",
+        // "--runInBand",
       ])
       .then(() => {
         console.log(`====== FILE: ${file} ==========`);
