@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app/index.ts",
+    "tarantula": "npx ts-node src/app/tarantula.ts",
+    "test": "nyc --reporter=text-summary jest",
+    "jest": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.24",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "@cedx/lcov": "^8.1.0"
+  }
+}
