@@ -1,4 +1,4 @@
-const { kmpSearch } = require("./knut");
+const { kmpSearch } = require("../knut");
 
 test("test #1", () => {
   const text = "ABCDABXYXYBA";
