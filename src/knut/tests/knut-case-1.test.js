@@ -5,3 +5,5 @@ test("test #1", () => {
   const pattern = "BXY";
   expect(kmpSearch(text, pattern)).toEqual([5]);
 });
+
+
