@@ -3,7 +3,6 @@ const fs = require("fs");
 
 const { parseLcov } = require("./parse-lcov");
 const { parseTestResults } = require("./parse-test-results");
-const { saveJSON } = require("./save-json");
 
 const { RESULT_OUTPUT_PATH } = require("../constants/results-path");
 const { TEST_DATA_PATH } = require("../constants/test-data");
@@ -37,8 +36,6 @@ async function runTests(testFiles) {
   });
 
   const result = await Promise.all(testPromises);
-
-  saveJSON(TEST_DATA_PATH, result);
 
   const jsonResult = JSON.stringify(result);
 
