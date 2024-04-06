@@ -24,7 +24,7 @@ function kmpSearch(text, pattern) {
   const n = text.length;
   const m = pattern.length;
 
-  if (n === 0) return [];
+  if (n === 0) return [0]; // bug!
 
   if (m === 0) return [];
 
@@ -43,7 +43,7 @@ function kmpSearch(text, pattern) {
     if (j === m) {
       matches.push(i - j);
       j = prefix[j - 1];
-    } else if (i < n && pattern[j] !== text[i]) {
+    } else if (i < n && pattern[j - 1] /*<-bug!*/ !== text[i]) {
       if (j !== 0) {
         j = prefix[j - 1];
       } else {
