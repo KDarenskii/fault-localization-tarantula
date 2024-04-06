@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/app/index.ts",
-    "tarantula": "npx ts-node src/app/tarantula.ts",
-    "test": "nyc --reporter=text-summary jest",
-    "jest": "jest --coverage"
+    "tarantula": "node src/tarantula/tarantula.js",
+    "test:knut": "node src/knut/knut-test.js",
+    "test:mid": "node src/mid/mid-test.js"
   },
   "author": "",
   "license": "ISC",
